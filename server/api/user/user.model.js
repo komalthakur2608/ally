@@ -7,7 +7,6 @@ import mongoose, {Schema} from 'mongoose';
 const authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
-  name: String,
   email: {
     type: String,
     lowercase: true,
@@ -21,7 +20,7 @@ var UserSchema = new Schema({
   },
   role: {
     type: String,
-    default: 'user'
+    default: 'employee'
   },
   password: {
     type: String,
