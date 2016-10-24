@@ -1,4 +1,27 @@
-<div class="navbar navbar-default navbar-static-top">
+<md-toolbar class="md-hue-2">
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+      <i class="material-icons">menu</i>
+    </md-button>
+    <h2>
+          <span>Ally</span>
+        </h2>
+    <span flex></span>
+    <md-button ng-hide="$ctrl.isLoggedIn()" class="md-icon-button" aria-label="Register" ui-sref="signup" ui-sref-active="active">
+      <i class="material-icons">person_add</i>
+    </md-button>
+    <md-button ng-hide="$ctrl.isLoggedIn()" class="md-icon-button" aria-label="Login" ui-sref="login" ui-sref-active="active">
+      <i class="material-icons">person_outline</i>
+    </md-button>
+    <span ng-show="$ctrl.isLoggedIn()">Hello {{ $ctrl.getCurrentUser().name }}</span>
+    <md-button ng-show="$ctrl.isLoggedIn()" class="md-icon-button" aria-label="Settings" ui-sref="settings" ui-sref-active="active">
+      <i class="material-icons">settings</i>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Logout" ui-sref="logout" ng-show="$ctrl.isLoggedIn()"><i class="material-icons">exit_to_app</i></md-button>
+  </div>
+</md-toolbar>
+
+<!-- <div class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
@@ -12,7 +35,7 @@
     <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
       <ul class="nav navbar-nav">
         <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
+          <a ui-sref="{{item.state}}">{{item.title}}</a>
         </li>
         <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
       </ul>
@@ -20,10 +43,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
         <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
-        <li ng-show="$ctrl.isLoggedIn()"><p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p> </li>
+        <li ng-show="$ctrl.isLoggedIn()">
+          <p class="navbar-text">Hello {{ $ctrl.getCurrentUser().name }}</p>
+        </li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout">Logout</a></li>
       </ul>
     </div>
   </div>
-</div>
+</div> -->
