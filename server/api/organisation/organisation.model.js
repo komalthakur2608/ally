@@ -17,7 +17,12 @@ var OrganisationSchema = new mongoose.Schema({
   domainName: String,
   about: String,
   address: String,
-  contacts: [{name : String, designation : String, phone : String, email : String}],
+  contacts: [{
+    name : String, 
+    designation : String, 
+    phone : String, 
+    email : String
+  }],
   members: [{
     type: Schema.Types.ObjectId,
     ref: 'Employee'
